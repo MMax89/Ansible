@@ -1,0 +1,25 @@
+- name: Ping servers; Install NGINX and Tree
+  hosts: nginx-webserver-backup
+
+  vars:
+    packages:
+             - tree
+
+    file_src: /etc/ansible.cfg
+    file_dest: /tmp/
+
+  tasks:
+
+  - name: Task ping servers
+    ping:
+
+  - name: Task install NGINX and Tree
+    yum:
+      pkg: "{{packages}}"
+      state: present
+
+  - name: Copy File
+    copy:
+      src: "{{file_src}}"
+      dest: "{{file_dest}}"
+      mode: 0700
