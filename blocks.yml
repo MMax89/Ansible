@@ -1,0 +1,30 @@
+- name: Test Blocks
+  hosts: all
+  become: yes
+
+  vars:
+
+  tasks:
+
+  - block:
+
+    - name: Install Packages
+      yum:
+        pkg:
+           - tree
+        state: present
+
+
+    - name: Create Folder
+      file:
+        path: /srv/folder1
+        state: directory
+
+    when: ansible_hostname == "nginx2"
+
+
+  - name: Copy File
+    copy:
+      src: file222
+      dest: /srv
+    when: ansible_hostname == "nginx1"

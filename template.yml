@@ -1,0 +1,15 @@
+- name: Test Blocks
+  hosts: all
+  become: yes
+
+  vars:
+
+   position: boss
+
+  tasks:
+
+  - name: Copy File
+    template: 
+       src: ./file222.j2
+       dest: /home/config
+       mode: 0700

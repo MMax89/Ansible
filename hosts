@@ -24,10 +24,10 @@
 ## 192.168.1.110
 
 [nginx-webserver]
-nginx1
+nginx1 inv_user=client1
 
 [nginx-webserver-backup]
-nginx2
+nginx2 inv_user=client2
 
 # If you have multiple hosts following a pattern you can specify
 # them like this:
