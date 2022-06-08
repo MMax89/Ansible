@@ -14,8 +14,11 @@
 
   - name: Create users
     user:
-      name: test1
+      name: "{{item.clientname}}"
       shell: /bin/bash
       groups: dev,test
       append: yes
-      home: /home/test1
+      home: "/home/{{item.homedir}}"
+    with_items:
+       - {clientname: client1, homedir: client1}
+       - {clientname: client2, homedir: client2}
