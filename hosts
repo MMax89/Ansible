@@ -23,6 +23,9 @@
 ## 192.168.1.100
 ## 192.168.1.110
 
+[nginxb]
+nginxb
+
 [nginx-webserver]
 nginx1 inv_user=client1
 
