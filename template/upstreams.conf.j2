@@ -1,0 +1,15 @@
+upstream backend {
+
+    least_conn;
+    server {{ansible_hostname}}:8080 weight=3 max_conns=55 max_fails=3 fail_timeout=40s;
+    server {{ansible_hostname}}:8080 weight=2  backup;
+}
+
+server {
+
+    location / {
+        proxy_pass http://backend;
+    }
+
+}
+

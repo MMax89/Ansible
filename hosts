@@ -27,10 +27,10 @@
 nginxb
 
 [nginx-webserver]
-nginx1 inv_user=client1
+nginx1
 
 [nginx-webserver-backup]
-nginx2 inv_user=client2
+nginx2
 
 # If you have multiple hosts following a pattern you can specify
 # them like this:
