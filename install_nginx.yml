@@ -12,12 +12,10 @@
         name=epel-release
         state=present
 
-    - name: Task install NGINX
+    - name: Task install and Start NGINX
       yum:
         name: nginx
         state: latest
-        
-    - name: Start Nginx Service
       service:
         name: nginx
         state: started
