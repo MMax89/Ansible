@@ -25,7 +25,7 @@
           dest: /usr/share/nginx/html/index.html
           mode: 0700
         
-        when: ansible_hostname == "nginx1 nginx2"
+        when: ansible_hostname == "{{nginx1}} {{nginx2}}"
 
       - name: Install upstreams.conf
         template:
